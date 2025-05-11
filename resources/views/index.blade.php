@@ -27,9 +27,9 @@
             <td>{{ $p->pegawai_umur}}</td>
             <td>{{ $p->pegawai_alamat}}</td>
             <td>
-                <a href="/pegawai/edit/{{ $p->id }}">Edit</a>
+                <a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
                 |
-                <a href="/pegawai/hapus/{{ $p->id }}">Hapus</a>
+                <a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
             </td>
         </tr>
         @endforeach
