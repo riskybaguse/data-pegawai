@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial Membuat CRUD Pada Laravel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body class="bg-white">
@@ -16,12 +17,13 @@
             </a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <button class="btn btn-outline-success align-items-center d-flex" type="submit"><i class="bi bi-search me-1"></i> Search</button>
             </form>
         </div>
     </nav>
-    <h3 class="text-center fs-2 fw-bold text-uppercase">Data Pegawai</h3>
-    <p class="text-center text-muted fs-5">~Yok cek dulu data pegawai yang udah masuk. Bisa tambah, edit, atau hapus cuy!~</p>
+    <h3 class="text-center fs-2 fw-bold text-uppercase">View Data Pegawai</h3>
+    <p class="text-center text-muted fs-5">Cek data pegawai yang udah masuk di bawah ini.</p>
+    <p class="text-center text-muted fs-5"> Mau nambah, edit, atau hapus? Tinggal klik tombolnya!</p>
     <p class="text-center text-muted text-capitalize fs-5">
         Total pegawai saat ini: <strong>{{ count($pegawai) }}</strong> pegawai
     </p>
@@ -29,10 +31,10 @@
     <br>
     <br>
     <div class="w-75 mx-auto mb-3 text-end">
-        <a href="/pegawai/tambah" class="btn btn-primary text-white text-decoration-none"> + Tambah Pegawai Baru</a>
+        <a href="/pegawai/tambah" class="btn btn-outline-primary  text-decoration-none"><i class="bi bi-plus-circle"></i> Tambah Pegawai Baru</a>
     </div>
     <div class="table-responsive w-80 mx-auto">
-        <table class="table table-bordered table-striped table-hover text-center w-75 mx-auto">
+        <table class="table table-bordered table-striped table-hover text-center align-middle w-75 mx-auto">
             <tr>
                 <th>No</th>
                 <th>Nama</th>
@@ -49,9 +51,9 @@
                 <td>{{ $p->pegawai_umur}}</td>
                 <td>{{ $p->pegawai_alamat}}</td>
                 <td>
-                    <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning text-white text-decoration-none m-1">Edit</a>
+                    <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning text-decoration-none m-1"> <i class="bi bi-pen"></i> Edit</a>
     
-                    <a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger text-white text-decoration-none m-1">Hapus</a>
+                    <a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger text-decoration-none m-1 "> <i class="bi bi-trash"></i> Hapus</a>
                 </td>
             </tr>
             @endforeach
