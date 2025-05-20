@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Pegawai</title>
+    <title>Edit Data Pegawai - CRUD Laravel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <meta name="description" content="Halaman untuk mengedit data pegawai seperti nama, jabatan, umur, dan alamat. Pastikan data yang diubah sudah sesuai sebelum disimpan.">
+
 </head>
 
 <body class="bg-white">
@@ -17,7 +19,7 @@
             </a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success align-items-center d-flex" type="submit"><i class="bi bi-search me-1"></i> Search</button>
+                <button class="btn btn-success align-items-center d-flex" type="submit"><i class="bi bi-search me-1"></i> Search</button>
             </form>
         </div>
     </nav>
@@ -27,8 +29,6 @@
     <p class="text-center text-muted text-capitalize fs-5">
         Total pegawai saat ini: <strong>{{ $jumlah_pegawai }}</strong> pegawai
     </p>
-    <br>
-    <br>
     <div class="w-50 mx-auto mb-1 text-end">
         <a href="/pegawai" class="btn btn-outline-primary text-decoration-none"><i class="bi bi-backspace"></i> Kembali</a>
     </div>
