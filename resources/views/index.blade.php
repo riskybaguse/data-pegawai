@@ -51,8 +51,12 @@
                 <td>{{ $p->pegawai_alamat}}</td>
                 <td>
                     <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning text-decoration-none m-1"> <i class="bi bi-pen"></i> Edit</a>
-    
-                    <a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger text-decoration-none m-1 "> <i class="bi bi-trash"></i> Hapus</a>
+
+                    <form action="/pegawai/hapus/{{ $p->pegawai_id }}" method="POST" style="display: inline;" onsubmit="return confirm('Yakin mau hapus karyawan?')">
+                        {{ csrf_field() }}
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger text-decoration-none m-1"> <i class="bi bi-trash"></i> Hapus</button>
+                    </form>
                 </td>
             </tr>
             @endforeach

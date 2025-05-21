@@ -19,6 +19,7 @@ class PegawaiController extends Controller
 
     public function tambah()
     {
+        // ngitung jumlah pegawai (tampilan doang)
         $jumlah = DB::table('pegawai')->count();
         // menampilkan view tambah
         return view('tambah', ['jumlah_pegawai' => $jumlah]);
