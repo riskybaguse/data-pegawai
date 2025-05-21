@@ -34,7 +34,7 @@
     </div>
     <div class="table-responsive w-80 mx-auto">
         <table class="table table-bordered table-striped table-hover text-center align-middle w-75 mx-auto">
-            <tr>
+            <tr class="table-primary">
                 <th>No</th>
                 <th>Nama</th>
                 <th>Jabatan</th>
