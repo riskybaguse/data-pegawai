@@ -19,7 +19,7 @@
             </a>
             <form class="d-flex" role="search">
                 <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-primary align-items-center d-flex rounded-pill" type="submit"><i class="bi bi-search"></i></button>
+                <button type="submit" class="btn btn-outline-primary rounded-pill" aria-label="Cari"><i class="bi bi-search"></i></button>
             </form>
         </div>
     </nav>
