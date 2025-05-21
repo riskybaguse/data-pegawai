@@ -18,8 +18,8 @@
                 CRUD Laravel 12 Cuy
             </a>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-success align-items-center d-flex" type="submit"><i class="bi bi-search me-1"></i> Search</button>
+                <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-primary align-items-center d-flex rounded-pill" type="submit"><i class="bi bi-search"></i></button>
             </form>
         </div>
     </nav>
