@@ -7,15 +7,23 @@ use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // mengambil data pegawai dari database
-        $pegawai = DB::table('pegawai')->get();
+        $search = $request->search;
 
-        // menampilkan data pegawai ke view index
-        return view('index', ['pegawai' => $pegawai]);
+        $pegawai = DB::table('pegawai')
+            ->when($search, function ($query, $search) {
+                $query->where('pegawai_nama', 'like', '%' . $search . '%')
+                    ->orWhere('pegawai_jabatan', 'like', '%' . $search . '%');
+            })
+            ->get();
+        
+        // ngitung jumlah pegawai (tampilan doang)
+        $jumlah = DB::table('pegawai')->count();
 
+        return view('index', ['pegawai' => $pegawai, 'jumlah_pegawai' => $jumlah, 'search' => $search]);
     }
+
 
     public function tambah()
     {

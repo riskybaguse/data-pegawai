@@ -14,12 +14,12 @@
 <body class="bg-white">
     <nav class="navbar bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand fs-3 fw-bold" href="#">
-                CRUD Laravel 12 Cuy
-            </a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" aria-label="Search" />
-                <button type="submit" class="btn btn-outline-primary rounded-pill" aria-label="Cari"><i class="bi bi-search"></i></button>
+            <h2><strong>CRUD Laravel 12 Cuy</strong></h2>
+            <form class="navbar-form navbar-left animate__animated animate__fadeInLeft" role="search" method="GET" action="/pegawai/" role="search">
+                <div class="form-group mt-10 d-flex align-items-center">
+                    <input type="text" class="form-control border-end-0 border rounded-pill me-2" name="search" placeholder="Search Name..." value="{{ request('search') }}" aria-label="Search" autocomplete="off">
+                    <button type="submit" name="submit" class="btn btn-outline-secondary rounded-pill" aria-label="search"><i class="bi bi-search" aria-hidden="true"></i></button>
+                </div>
             </form>
         </div>
     </nav>
@@ -35,27 +35,27 @@
     @foreach($pegawai as $p)
     <form action="/pegawai/update" method="post" class="w-50 mx-auto mt-2">
         {{ csrf_field() }}
-                <div class="mb-3">
-                    <label for="nama" class="form-label fw-semibold">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama" required value="{{ $p->pegawai_nama }}">
-                </div>
-                <div class="mb-3">
-                    <label for="jabatan" class="form-label fw-semibold">Jabatan</label>
-                    <input type="text" class="form-control" id="jabatan" name="jabatan" required value="{{ $p->pegawai_jabatan }}">
+        <div class="mb-3">
+            <label for="nama" class="form-label fw-semibold">Nama</label>
+            <input type="text" class="form-control" id="nama" name="nama" required value="{{ $p->pegawai_nama }}">
+        </div>
+        <div class="mb-3">
+            <label for="jabatan" class="form-label fw-semibold">Jabatan</label>
+            <input type="text" class="form-control" id="jabatan" name="jabatan" required value="{{ $p->pegawai_jabatan }}">
 
-                </div>
-                <div class="mb-3">
-                    <label for="umur" class="form-label fw-semibold">Umur</label>
-                    <input type="number" class="form-control" id="umur" name="umur" required value="{{ $p->pegawai_umur }}">
-                </div>
-                <div class="mb-3">
-                    <label for="alamat" class="form-label fw-semibold">Alamat</label>
-                    <textarea type="text" class="form-control" id="alamat" name="alamat" required>{{ $p->pegawai_alamat }}</textarea>
-                </div>
-                <div class="text-end">
-                    <input type="hidden" name="id" value="{{ $p->pegawai_id }}">
-                    <button type="submit" class="btn btn-outline-success"><i class="bi bi-bookmark-check"></i> Update Data</button>
-                </div>
+        </div>
+        <div class="mb-3">
+            <label for="umur" class="form-label fw-semibold">Umur</label>
+            <input type="number" class="form-control" id="umur" name="umur" required value="{{ $p->pegawai_umur }}">
+        </div>
+        <div class="mb-3">
+            <label for="alamat" class="form-label fw-semibold">Alamat</label>
+            <textarea type="text" class="form-control" id="alamat" name="alamat" required>{{ $p->pegawai_alamat }}</textarea>
+        </div>
+        <div class="text-end">
+            <input type="hidden" name="id" value="{{ $p->pegawai_id }}">
+            <button type="submit" class="btn btn-outline-success"><i class="bi bi-bookmark-check"></i> Update Data</button>
+        </div>
     </form>
     @endforeach
 </body>
