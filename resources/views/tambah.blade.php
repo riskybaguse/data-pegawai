@@ -5,13 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Halaman tambah data pegawai pada sistem CRUD Laravel. Isi form ini untuk menambahkan data pegawai baru secara lengkap dan terstruktur.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="shortcut icon" href="assets/favicon.jpg" type="image/x-icon">
-    <title>Tambah Pegawai</title>
+
+    <!-- Bootstrap CSS (non-blocking dengan preload) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" as="style">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap Icons (non-blocking trick) -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" media="all">
+
     
+    <link rel="shortcut icon" href="assets/favicon.jpg" type="image/x-icon">
+
+    <title>Tambah Pegawai</title>
 </head>
+
+
 
 <body class="bg-white">
     <nav class="navbar bg-light">
