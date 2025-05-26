@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Halaman utama yang menampilkan daftar lengkap data pegawai. Kamu bisa melihat, mengedit, atau menghapus data pegawai melalui halaman ini.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    
+
 
     <title>Tutorial Membuat CRUD Pada Laravel</title>
 
@@ -33,13 +34,58 @@
         Total pegawai saat ini: <strong>{{ $jumlah_pegawai}}</strong> pegawai
     </p>
     @if(request('search'))
-    <p class="text-center text-muted alert alert-info">Hasil pencarian untuk <strong>"{{ request('search') }}"</strong>: {{ count($pegawai) }} data ditemukan!</p>
+    <p class="fade show w-75 mx-auto mt-3 text-center text-muted alert alert-info">Hasil pencarian untuk <strong>"{{ request('search') }}"</strong>: {{ count($pegawai) }} data ditemukan!</p>
 
     <div class="w-75 mx-auto mb-3 d-flex justify-content-between">
         <a href="/pegawai" class="btn btn-outline-primary text-decoration-none"><i class="bi bi-backspace"></i> Kembali</a>
     </div>
     @endif
 
+    @if (session('success_add'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sukses!',
+                html: "Data Pegawai <strong>{{ session('success_add') }}</strong> telah berhasil ditambahkan!", 
+                confirmButtonText: 'OK',
+                customClass: {
+                    confirmButton: 'btn btn-success'
+                }
+            });
+        });
+    </script>
+    @endif
+    @if (session('success_update'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sukses!',
+                html: "Data Pegawai <strong>{{ session('success_update') }}</strong> telah berhasil diperbarui!",
+                confirmButtonText: 'OK',
+                customClass: {
+                    confirmButton: 'btn btn-success'
+                }
+            });
+        });
+    </script>
+    @endif
+    @if (session('success_delete'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Sukses!',
+                html: "<strong>{{ session('success_delete') }}</strong>",
+                confirmButtonText: 'OK',
+                customClass: {
+                    confirmButton: 'btn btn-success'
+                }
+            });
+        });
+    </script>
+    @endif
     <div class="w-75 mx-auto mb-3 d-flex justify-content-between">
         <a href="/pegawai/tambah" class="btn btn-outline-primary text-decoration-none">
             <i class="bi bi-plus-circle"></i> Tambah Pegawai Baru

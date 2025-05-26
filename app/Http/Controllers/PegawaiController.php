@@ -9,18 +9,23 @@ class PegawaiController extends Controller
 {
     public function index(Request $request)
     {
+        // jika ada inputan pencarian
         $search = $request->search;
 
+        // mengambil data pegawai dari database
         $pegawai = DB::table('pegawai')
+            // jika ada inputan pencarian, maka akan melakukan filter
             ->when($search, function ($query, $search) {
                 $query->where('pegawai_nama', 'like', '%' . $search . '%')
                     ->orWhere('pegawai_jabatan', 'like', '%' . $search . '%');
             })
+            // urutkan data pegawai berdasarkan id
             ->get();
         
         // ngitung jumlah pegawai (tampilan doang)
         $jumlah = DB::table('pegawai')->count();
 
+        // menampilkan view index
         return view('index', ['pegawai' => $pegawai, 'jumlah_pegawai' => $jumlah, 'search' => $search]);
     }
 
@@ -43,8 +48,8 @@ class PegawaiController extends Controller
             'pegawai_alamat' => $request->alamat,
         ]);
 
-        // alihkan halaman ke pegawai
-        return redirect('/pegawai');
+        // alihkan halaman ke pegawai dan tampilkan pesan sukses berdasarkan nama pegawai
+        return redirect('/pegawai')->with('success_add', '' . $request->nama . '');
     }
 
     public function edit($id)
@@ -70,7 +75,7 @@ class PegawaiController extends Controller
         ]);
 
         // alihkan halaman ke pegawai
-        return redirect('/pegawai');
+        return redirect('/pegawai') ->with('success_update', '' . $request->nama . '');
     }
 
     public function hapus($id)
@@ -79,6 +84,6 @@ class PegawaiController extends Controller
         DB::table('pegawai')->where('pegawai_id', $id)->delete();
 
         // alihkan halaman ke pegawai
-        return redirect('/pegawai');
+        return redirect('/pegawai')->with('success_delete', 'Data pegawai berhasil dihapus!');
     }
 }
