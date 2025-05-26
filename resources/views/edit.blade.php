@@ -58,6 +58,9 @@
         </div>
     </form>
     @endforeach
+    <footer class="text-center mt-5 text-muted py-3">
+        <p>&copy; {{ date('Y') }} CRUD Laravel 12 Cuy. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
