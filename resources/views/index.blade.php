@@ -7,7 +7,9 @@
     <meta name="description" content="Halaman utama yang menampilkan daftar lengkap data pegawai. Kamu bisa melihat, mengedit, atau menghapus data pegawai melalui halaman ini.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <meta name="description" content="Halaman untuk mengedit data pegawai seperti nama, jabatan, umur, dan alamat. Pastikan data yang diubah sudah sesuai sebelum disimpan.">
+
+    
+
     <title>Tutorial Membuat CRUD Pada Laravel</title>
 
 </head>
@@ -64,7 +66,7 @@
                 <td>
                     <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning text-decoration-none"> <i class="bi bi-pencil"></i> Edit</a>
 
-                    <form action="/pegawai/hapus/{{ $p->pegawai_id }}" method="POST" style="display:inline" onsubmit="return confirm('Yakin mau hapus?')">
+                    <form action="/pegawai/hapus/{{ $p->pegawai_id }}" method="POST" class="form-hapus d-inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger text-decoration-none m-1"> <i class="bi bi-trash"></i> Hapus</button>
@@ -78,6 +80,27 @@
     <footer class="text-center mt-5 text-muted py-3">
         <p>&copy; {{ date('Y') }} CRUD Laravel 12 Cuy. All rights reserved.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<script>
+    document.querySelectorAll('.form-hapus').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Yakin mau hapus data ini?',
+                text: "Data yang sudah dihapus tidak bisa dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, hapus!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit();
+                }
+            });
+        });
+    });
+</script>
 
 </html>
