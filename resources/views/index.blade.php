@@ -113,7 +113,7 @@
                     <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning text-decoration-none"> <i class="bi bi-pencil"></i> Edit</a>
 
                     <form action="/pegawai/hapus/{{ $p->pegawai_id }}" method="POST" class="form-hapus d-inline">
-                        @csrf
+                        {{ csrf_field() }}
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger text-decoration-none m-1"> <i class="bi bi-trash"></i> Hapus</button>
                     </form>
