@@ -5,10 +5,10 @@ Aplikasi web simpel buat ngelola data pegawai. Buat yang males pake Excel atau d
 
 ## Fitur Unggulan 🚀
 - 📋 Liat daftar pegawai lengkap (biar gampang ngontrol)
-- 🔍 Fitur cari data pegawai (buat nyari yang sering izin 😅)
+- 🔍 Fitur cari data pegawai (buat nyari yang sering telat)
 - ➕ Tambah data pegawai baru (buat yang baru join)
 - ✏️ Edit data pegawai (misal ganti jabatan atau kontak)
-- 🗑️ Hapus data pegawai (kalo udah resign... atau dipecat 🙈)
+- 🗑️ Hapus data pegawai (kalo udah resign... atau dipecat)
 - 🧠 Validasi form otomatis (biar inputan ga ngawur)
 - 😍 Notifikasi pake SweetAlert (biar lebih manis tampilannya)
 - 📱 Responsive design (enak diliat di HP, tablet, sampe monitor gede)
