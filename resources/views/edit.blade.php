@@ -35,6 +35,7 @@
     @foreach($pegawai as $p)
     <form action="/pegawai/update" method="post" class="w-50 mx-auto mt-2">
         {{ csrf_field() }}
+        @method('PUT')
         <div class="mb-3">
             <label for="nama" class="form-label fw-semibold">Nama</label>
             <input type="text" class="form-control" id="nama" name="nama" required value="{{ $p->pegawai_nama }}">
