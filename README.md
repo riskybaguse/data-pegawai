@@ -26,7 +26,7 @@ Aplikasi web simpel buat ngelola data pegawai. Buat yang males pake Excel atau d
 - ![SweetAlert2](https://img.shields.io/badge/SweetAlert2-FF6C6C?logo=javascript&logoColor=white) SweetAlert2
 
 ### 🗄️ Database
-- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white) MySQL (bisa disesuaikan)
+- ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white) MySQL
 
 ### 🛠️ Tools & Lain-lain
 - ![VSCode](https://img.shields.io/badge/VSCode-007ACC?logo=visualstudiocode&logoColor=white) VSCode
